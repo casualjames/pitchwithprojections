@@ -149,6 +149,74 @@
             text-align: center;
         }
 
+        /* Team Section (merged from new.html) */
+        .team-section {
+            max-width: 1200px;
+            margin: auto;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        .team-section h2 {
+            font-size: 2.5rem;
+            color: #FFD700;
+            margin-bottom: 30px;
+        }
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        .team-member {
+            background: rgba(255,255,255,0.1);
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        .team-member:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+        }
+        .team-member img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin-bottom: 15px;
+            border: 4px solid #FFD700;
+            transition: transform 0.3s;
+        }
+        .team-member:hover img {
+            transform: scale(1.05);
+        }
+        .team-member h3 {
+            font-size: 1.3rem;
+            color: #ffffff;
+            margin-bottom: 5px;
+        }
+        .team-member p.role {
+            font-size: 1rem;
+            color: #f3e8a1;
+            margin-bottom: 12px;
+            font-weight: bold;
+        }
+        .team-member p.bio {
+            font-size: 0.95rem;
+            color: #e6e6e6;
+            line-height: 1.5;
+            padding: 0 5px;
+        }
+        .profile-card { page-break-inside: avoid; }
+
+        /* Comparison scale styles */
+        .comparison-scale { margin-top: 20px; }
+        .scale-row { margin: 12px 0; }
+        .scale-label { font-weight: bold; color: #FFD700; margin-bottom: 6px; }
+        .scale-values { display: flex; justify-content: space-between; font-size: 0.95rem; color: #e6e6e6; margin-bottom: 6px; }
+        .scale-bar { width: 100%; height: 10px; background: rgba(255,255,255,0.15); border-radius: 999px; overflow: hidden; border: 1px solid rgba(255,255,255,0.2); }
+        .scale-fill { height: 100%; background: linear-gradient(90deg, #FFD700, #ffb703); }
+
         @media print {
             @page { 
                 size: A4 landscape; 
@@ -167,6 +235,13 @@
                 margin: 0 auto;
                 padding: 30px;
             }
+            .slide.team-slide { height: auto; }
+            .team-grid { grid-template-columns: repeat(3, 1fr); gap: 16px; }
+            .team-member { background: #1e3c72 !important; border-color: #FFD700 !important; box-shadow: none !important; break-inside: avoid; page-break-inside: avoid; }
+            .team-member h3 { color: #ffffff !important; }
+            .team-member p.role { color: #f3e8a1 !important; }
+            .team-member p.bio { color: #ffffff !important; }
+            .team-member img { width: 120px; height: 120px; }
             
             .slide:last-child {
                 page-break-after: avoid;
@@ -413,23 +488,76 @@
                     <h3>Current Achievements</h3>
                     <ul class="content-list">
                         <li><strong>Funding:</strong> $5,000 from TEF, KCIC, BeGreen, CAPYEI</li>
-                        <li><strong>Revenue:</strong> KSh 2M monthly (2024)</li>
+                        <li><strong>Revenue:</strong> KSh 2M monthly</li>
                         <li><strong>Clients:</strong> 200+ regular clients</li>
                     </ul>
                 </div>
                 <div>
                     <h3>Next 24 Months</h3>
                     <ul class="content-list">
-                        <li>Scale to <strong>KSh 10M/month</strong></li>
-                        <li>Deploy <strong>50 RVMs</strong></li>
-                        <li>Expand to <strong>3 Kenyan cities</strong></li>
+                        <li><strong>Funding:</strong> $200,000</li>
+                        <li><strong>Revenue:</strong> KSh 10M/month</li>
+                        <li><strong>Clients:</strong> 2,000</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="comparison-scale">
+                <div class="scale-row">
+                    <div class="scale-label">Funding</div>
+                    <div class="scale-values"><span>$5,000</span><span>$200,000</span></div>
+                    <div class="scale-bar"><div class="scale-fill" style="width: 2.5%;"></div></div>
+                </div>
+                <div class="scale-row">
+                    <div class="scale-label">Revenue (Monthly)</div>
+                    <div class="scale-values"><span>KSh 2M</span><span>KSh 10M</span></div>
+                    <div class="scale-bar"><div class="scale-fill" style="width: 20%;"></div></div>
+                </div>
+                <div class="scale-row">
+                    <div class="scale-label">Clients</div>
+                    <div class="scale-values"><span>200+</span><span>2,000</span></div>
+                    <div class="scale-bar"><div class="scale-fill" style="width: 10%;"></div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 10: What can Kill us -->
+    <div class="slide">
+        <div class="slide-content">
+            <h2>What can Kill us</h2>
+            <div class="content-grid">
+                <div>
+                    <h3>Market and Demand Challenges</h3>
+                    <ul class="content-list">
+                        <li>Inconsistent market need; seasonality of customers</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Financial and Resource Challenges</h3>
+                    <ul class="content-list">
+                        <li>Limited access to finance</li>
+                        <li>High technology costs</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Operational and Infrastructure Challenges</h3>
+                    <ul class="content-list">
+                        <li>Infrastructure gaps</li>
+                        <li>Scaling issues</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Strategic and Systemic Challenges</h3>
+                    <ul class="content-list">
+                        <li>Competing priorities</li>
+                        <li>Misaligned strategy</li>
                     </ul>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Slide 10: Financial Projections -->
+    <!-- Slide 11: Financial Projections -->
     <div class="slide">
         <div class="slide-content">
             <h2>Financial Projections</h2>
@@ -451,7 +579,7 @@
         </div>
     </div>
 
-    <!-- Slide 11: The Ask -->
+    <!-- Slide 12: The Ask -->
     <div class="slide">
         <div class="slide-content">
             <h2>The Ask</h2>
@@ -471,7 +599,54 @@
         </div>
     </div>
 
-    <!-- Slide 12: Closing -->
+    <!-- Slide 13: Team -->
+    <div class="slide team-slide">
+        <div class="slide-content">
+            <section class="team-section">
+                <h2>Meet Our Team</h2>
+                <div class="team-grid">
+                    <div class="team-member">
+                        <img src="images/antony.jpeg" alt="Antony Makanga">
+                        <h3>Antony Makanga</h3>
+                        <p class="role">Founder & CEO</p>
+                        <p class="bio">I'm passionate about turning real-world challenges into opportunities for meaningful change. As the founder of Blancosy Ltd, I focus on developing innovative solutions that address everyday challenges. Always open to connecting with like-minded changemakers.</p>
+                    </div>
+                    <div class="team-member">
+                        <img src="images/derrick.jpeg" alt="Derrick Essanya">
+                        <h3>Derrick Essanya</h3>
+                        <p class="role">Head of Operations</p>
+                        <p class="bio">Derrick oversees operations, ensuring smooth deployment of Eco-Makaa, Eco-Jiko, and RVM systems. His expertise in supply chain logistics ensures efficiency and scalability across all projects.</p>
+                    </div>
+                    <div class="team-member">
+                        <img src="images/cate.jpeg" alt="Catherine Nderitu">
+                        <h3>Catherine Nderitu</h3>
+                        <p class="role">COO</p>
+                        <p class="bio">Catherine ensures seamless coordination across departments, enabling Blancosy to deliver impact while maintaining operational excellence.</p>
+                    </div>
+                    <div class="team-member">
+                        <img src="images/koina.jpeg" alt="Koina Erick">
+                        <h3>Koina Erick</h3>
+                        <p class="role">CTO</p>
+                        <p class="bio">Tech visionary passionate about designing and implementing sustainable, innovative technology solutions for a greener future.</p>
+                    </div>
+                    <div class="team-member">
+                        <img src="images/mil5.jpg" alt="Dickson Esamai">
+                        <h3>Dickson Esamai</h3>
+                        <p class="role">Senior UI/UX Designer & Developer</p>
+                        <p class="bio">Blending creativity and code to create intuitive, impactful user experiences that inspire and engage.</p>
+                    </div>
+                    <div class="team-member">
+                        <img src="images/javan.jpeg" alt="Javan">
+                        <h3>Javan</h3>
+                        <p class="role">Designer</p>
+                        <p class="bio">Javan crafts visuals that tell stories, making every design element meaningful and visually compelling.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- Slide 14: Closing -->
     <div class="slide closing-slide">
         <div class="slide-content">
             <div class="logo-placeholder">
