@@ -217,6 +217,17 @@
         .scale-bar { width: 100%; height: 10px; background: rgba(255,255,255,0.15); border-radius: 999px; overflow: hidden; border: 1px solid rgba(255,255,255,0.2); }
         .scale-fill { height: 100%; background: linear-gradient(90deg, #FFD700, #ffb703); }
 
+        /* Investment Table Styles */
+        table {
+            font-size: 0.95rem;
+        }
+        table th {
+            font-weight: bold;
+        }
+        table tr:hover {
+            background: rgba(255,255,255,0.05);
+        }
+
         @media print {
             @page { 
                 size: A4 landscape; 
@@ -242,6 +253,11 @@
             .team-member p.role { color: #f3e8a1 !important; }
             .team-member p.bio { color: #ffffff !important; }
             .team-member img { width: 120px; height: 120px; }
+            
+            table { 
+                page-break-inside: avoid; 
+                font-size: 0.85rem;
+            }
             
             .slide:last-child {
                 page-break-after: avoid;
@@ -575,22 +591,65 @@
         </div>
     </div>
 
-    <!-- Slide 12: The Ask -->
+    <!-- Slide 12: The Ask - Investment Breakdown -->
     <div class="slide">
         <div class="slide-content">
-            <h2>The Ask</h2>
-            <div class="content-grid">
-                <div>
-                    <ul class="content-list">
-                        <li><strong>Strategic Investment:</strong> $500K to scale logistics & data platform</li>
-                        <li><strong>Office Space:</strong> Support operational expansion</li>
-                        <li><strong>Partnerships:</strong> Corporates, governments & investors</li>
-                    </ul>
-                </div>
-                <div class="highlight-box">
-                    <h3>Our Vision</h3>
-                    <p><em>"To be Africa's #1 WasteTech Unicorn — Leading the Global South's Circular Economy Revolution"</em></p>
-                </div>
+            <h2>The Ask: $500,000 Strategic Investment</h2>
+            <div style="margin-top: 20px; overflow-x: auto;">
+                <table style="width: 100%; border-collapse: collapse; background: rgba(255,255,255,0.1); border-radius: 10px; overflow: hidden;">
+                    <thead>
+                        <tr style="background: linear-gradient(135deg, #1e3c72, #2a5298);">
+                            <th style="padding: 15px; text-align: left; color: #FFD700; font-size: 1.1rem; border-bottom: 2px solid #FFD700;">Category</th>
+                            <th style="padding: 15px; text-align: right; color: #FFD700; font-size: 1.1rem; border-bottom: 2px solid #FFD700;">Amount</th>
+                            <th style="padding: 15px; text-align: center; color: #FFD700; font-size: 1.1rem; border-bottom: 2px solid #FFD700;">%</th>
+                            <th style="padding: 15px; text-align: left; color: #FFD700; font-size: 1.1rem; border-bottom: 2px solid #FFD700;">Key Outcomes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);">
+                            <td style="padding: 12px; color: #fff; font-weight: bold;">Technology & Platform</td>
+                            <td style="padding: 12px; text-align: right; color: #FFD700; font-weight: bold;">$150,000</td>
+                            <td style="padding: 12px; text-align: center; color: #fff;">30%</td>
+                            <td style="padding: 12px; color: #e6e6e6; font-size: 0.9rem;">AI optimization, blockchain, 15 RVMs, enhanced platform</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);">
+                            <td style="padding: 12px; color: #fff; font-weight: bold;">Operations & Infrastructure</td>
+                            <td style="padding: 12px; text-align: right; color: #FFD700; font-weight: bold;">$120,000</td>
+                            <td style="padding: 12px; text-align: center; color: #fff;">24%</td>
+                            <td style="padding: 12px; color: #e6e6e6; font-size: 0.9rem;">10+ vehicles, 5 hubs, 3x production capacity</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);">
+                            <td style="padding: 12px; color: #fff; font-weight: bold;">Market Expansion & Growth</td>
+                            <td style="padding: 12px; text-align: right; color: #FFD700; font-weight: bold;">$90,000</td>
+                            <td style="padding: 12px; text-align: center; color: #fff;">18%</td>
+                            <td style="padding: 12px; color: #e6e6e6; font-size: 0.9rem;">3-4 cities, 400+ new clients, sales team</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);">
+                            <td style="padding: 12px; color: #fff; font-weight: bold;">Team & Talent</td>
+                            <td style="padding: 12px; text-align: right; color: #FFD700; font-weight: bold;">$80,000</td>
+                            <td style="padding: 12px; text-align: center; color: #fff;">16%</td>
+                            <td style="padding: 12px; color: #e6e6e6; font-size: 0.9rem;">50+ team members, key C-level hires, regional managers</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);">
+                            <td style="padding: 12px; color: #fff; font-weight: bold;">Fintech & Financial Services</td>
+                            <td style="padding: 12px; text-align: right; color: #FFD700; font-weight: bold;">$30,000</td>
+                            <td style="padding: 12px; text-align: center; color: #fff;">6%</td>
+                            <td style="padding: 12px; color: #e6e6e6; font-size: 0.9rem;">500+ collectors, micro-loans, insurance products</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 12px; color: #fff; font-weight: bold;">Working Capital & Operations</td>
+                            <td style="padding: 12px; text-align: right; color: #FFD700; font-weight: bold;">$30,000</td>
+                            <td style="padding: 12px; text-align: center; color: #fff;">6%</td>
+                            <td style="padding: 12px; color: #e6e6e6; font-size: 0.9rem;">Cash flow, office spaces, operational expenses</td>
+                        </tr>
+                        <tr style="background: rgba(255,215,0,0.2); border-top: 3px solid #FFD700;">
+                            <td style="padding: 15px; color: #fff; font-weight: bold; font-size: 1.1rem;">TOTAL</td>
+                            <td style="padding: 15px; text-align: right; color: #FFD700; font-weight: bold; font-size: 1.1rem;">$500,000</td>
+                            <td style="padding: 15px; text-align: center; color: #fff; font-weight: bold; font-size: 1.1rem;">100%</td>
+                            <td style="padding: 15px; color: #FFD700; font-weight: bold; font-size: 1.1rem;">6x revenue, 3x clients, profitability by Month 18</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>
